@@ -1,12 +1,13 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-    font-family: Ubuntu-apple-system,BlinkMacSystemFont,"Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    /* box-sizing: border-box; */
+    font-family: Ubuntu-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
 .first-header {
     background-color: #0099FF;
+    position: relative;
 }
 
 .first-header div {
@@ -22,6 +23,7 @@
 .second-head {
     background-color: #F1F1F2;
     padding: 7px;
+    position: relative;
 }
 
 .second-header {
@@ -47,21 +49,30 @@
 .second-header1 a {
     color: #F68B1E;
     font-size: 13px;
+    text-decoration: none;
     font-weight: 500;
 }
+
+.second-header1 a:hover {
+    text-decoration: underline;
+}
+
 .header2 img {
     width: 15px;
     border-radius: 50%;
     background-color: #F68B1E;
 }
-.header2{
+
+.header2 {
     align-items: center;
     gap: 2px;
     display: flex;
 }
-.header2 a{
+
+.header2 a {
     color: gray;
 }
+
 .second-header2 {
     display: flex;
     align-items: center;
@@ -76,14 +87,19 @@
 
 .third-header {
     display: flex;
-    overflow: hidden;
+    flex-wrap: nowrap;
+    overflow: visible;
     justify-content: space-between;
-    width: 90%;
-    margin: auto;
-    /* position: relative; */
-    gap: 50px;
+    width: 100%;
+    padding: 10px 5.1%;
+    position: sticky;
+    top: 0;
+    background: white;
+    box-shadow: 0px 12px 17px -20px rgba(0, 0, 0, 0.20);
+    z-index: 1000;
+    gap: 20px;
     align-items: center;
-    margin-top: 10px;
+    box-sizing: border-box;
 }
 
 .third-header img {
@@ -137,102 +153,440 @@
     font-family: Ubuntu, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     font-weight: 600;
 }
-.hero{
+
+.third-header3 a:hover {
+    color: #F9AF63;
+}
+
+.hero {
     background-image: url("/multimedia/image/imgi_231_BG_TAKEOVER26.jpg");
     /* background-color: #F1F1F2; */
     border: 3px solid black;
     width: 100%;
     margin-top: 10px;
 }
-.hero-1{
-    width: 90%;
+
+.hero_div {
     display: flex;
-    gap: 20px;
+    width: 90%;
     margin: auto;
-    margin-top: 10px;
-    margin-bottom: 20px;
 }
-.hero-body1{
-    background-color: white;
-    width: 15%;
-    border-radius: 5px;
+
+.div_1 {
+    width: 18%;
+    padding: 10px;
 }
-.body-nav ul{
+
+.div_1 ul {
+    margin: 0;
+    padding: 7px 0;
     list-style: none;
-    line-height: 30px;
 }
-.body-nav a{
-    text-decoration: none;
-    color: #4b4b4d;
-    font-size: 13px;
+
+.category-menu {
+    position: relative;
+    background: #fff;
+    width: 218px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 8px 0;
+}
+
+.category-item {
+    padding: 0 12px;
+}
+
+.category-row,
+.static-item {
+    min-height: 34.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-family: Roboto, -apple-system, "system-ui", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
     font-weight: 500;
+    line-height: normal;
+    color: rgb(49, 49, 51);
+    cursor: pointer;
+    padding: 0 4px;
+    border-radius: 2px;
 }
-.hero-body2{
-    width: 65%;
+
+.category-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 }
-.carousel-item img{
-    width: 100%;
-    /* height: 100%; */
+
+.category-label i {
+    font-size: 16px;
+    color: #75757a;
+}
+
+.category-item:hover .category-row,
+.static-item:hover {
+    color: rgb(246, 139, 30);
+    background: #fff7ef;
+}
+
+.has-panel .category-row::after {
+    content: "\203A";
+    font-size: 18px;
+    color: #9b9ba0;
+    margin-left: auto;
+}
+
+.has-panel:hover .category-row::after {
+    color: rgb(246, 139, 30);
+}
+
+
+.div_1 {
+    width: 75%;
+    margin: auto;
+    padding: 10px;
+
+}
+
+.category-panel,
+.drop-down-m {
+    position: absolute;
+    top: -200px;
+}
+
+
+
+.category-panel {
+    position: absolute;
+    left: 217px;
+    top: -7px;
+    width: 740px;
+    height: 393.5px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 0 4px 4px 0;
+    /* box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12); */
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+    padding: 16px 20px;
+    box-sizing: border-box;
+}
+
+.second-drops {
+    position: absolute;
+    left: 217px;
+    top: -41px;
+    width: 740px;
+    height: 393.5px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 0 4px 4px 0;
+    /* box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12); */
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+    padding: 16px 20px;
+    box-sizing: border-box;
+}
+
+.panel-health,
+.panel-home,
+.panel-fashion,
+.panel-supermarket,
+.panel-computing,
+.panel-baby,
+.panel-gaming,
+.panel-music,
+.panel-other {
+    width: 700px;
+}
+
+.panel-electronics {
+    width: 730px;
+    left: 217px;
+}
+
+.itm-1 {
+    height: 420px;
+}
+
+
+.panel-health {
+    top: -76px;
+    left: 217px;
+    height: 393.5px;
+    width: 740px;
+
+}
+
+.panel-home {
+    position: absolute;
+    width: 740px;
+    height: 393.5px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 0 4px 4px 0;
+    /* box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12); */
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+    padding: 16px 20px;
+    box-sizing: border-box;
+    top: -110px;
+    left: 217px;
+}
+
+.panel-electronics {
+    top: -145px;
+    height: 393.5px;
+    width: 740px;
+}
+
+.panel-fashion {
+    top: -179px;
+    width: 740px;
+
+
+}
+
+.panel-supermarket {
+    top: -213.5px;
+    width: 740px;
+}
+
+.panel-computing {
+    top: -248px;
+    width: 740px;
+}
+
+.panel-baby {
+    top: -282.5px;
+    width: 740px;
+
+}
+
+.panel-gaming {
+    top: -317px;
+    width: 740px;
+}
+
+.panel-other {
+    top: -352px;
+    width: 740px;
+}
+
+.panel-health .content-dr,
+.panel-home .content-dr,
+.panel-electronics .content-dr,
+.panel-fashion .content-dr,
+.panel-supermarket .content-dr,
+.panel-computing .content-dr,
+.panel-baby .content-dr,
+.panel-gaming .content-dr,
+.panel-music .content-dr,
+.panel-other .content-dr {
+    gap: 28px;
+}
+
+.itm-1 li {
+    font-family: Roboto, -apple-system, "system-ui", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.3;
+    color: rgb(117, 117, 122);
+    /* margin-bottom: 8px; */
+    cursor: pointer;
+}
+
+.itm-1 {
+    min-width: 0;
+}
+
+.itm-1 ul {
+    margin-bottom: 18px;
+}
+
+.panel-health .itm-1 li,
+.panel-baby .itm-1 li {
+    margin-bottom: 9px;
+    line-height: 1.1;
+}
+
+.panel-fashion .itm-1 li {
+    margin-bottom: 4px;
+    line-height: 0.90;
+}
+
+.panel-supermarket .itm-1 li {
+    margin-bottom: 3px;
+    line-height: 0.90;
+}
+
+.panel-electronics .itm-1 li {
+    margin-bottom: 6px;
+    line-height: 0.90;
+}
+
+.second-drops .itm-1 li {
+    margin-bottom: 7px;
+    line-height: 0.95;
+}
+
+.content-dr {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.itm-1 h4 {
+    font-family: Roboto, -apple-system, "system-ui", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    line-height: normal;
+    color: rgb(49, 49, 51);
+    margin: 0 0 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f1f1f2;
+}
+
+.itm-1 h4:hover {
+    color: #F9AF63;
+}
+
+.itm-1 h3 {
+    font-family: Roboto, -apple-system, "system-ui", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: normal;
+    color: rgb(49, 49, 51);
+    margin: 0 0 10px;
+    padding-bottom: 8px;
+}
+
+
+
+
+
+.has-panel {
+    position: relative;
+}
+
+.has-panel:hover .category-panel,
+.has-panel:hover .drop-down-m,
+.has-panel:hover .second-drops {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.itm-1 li:hover {
+    font-size: 13px;
+    color: #000;
+}
+
+.hero-body2 {
+    width: 350%;
+    padding: 20px;
+}
+
+.carousel-item img {
     border-radius: 5px;
     object-fit: cover;
 }
-.carousel-inner{
+
+.carousel-inner {
     overflow: hidden;
     border-radius: 5px;
 }
-.hero-body3{
-    width: 20%;
+
+.hero-body2 .carousel,
+.hero-body2 .carousel-inner,
+.hero-body2 .carousel-item {
+    height: 400px;
+}
+
+.hero-body2 .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-body3 {
+    width: 30%;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 9px;
 }
-.body-box1{
+
+.body-box1 {
     background-color: white;
-    padding: 20px;
+    width: 250px;
+    height: 200px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     border-radius: 5px;
 }
-.box1-box{
+
+.box1-box {
     display: flex;
     width: 100%;
     margin: auto;
     align-items: center;
 }
-.box-1 a{
+
+.box-1 a {
     text-decoration: none;
     color: black;
 }
-.box2-box{
+
+.box2-box {
     display: flex;
     align-items: center;
 }
-.box-one a{
+
+.box-one a {
     text-decoration: none;
     color: black;
 }
-.box3-box{
+
+.box3-box {
     display: flex;
     align-items: center;
 }
-.box-two a{
+
+.box-two a {
     text-decoration: none;
     color: black;
 }
-.body-box2 img{
+
+.body-box2 img {
     width: 100%;
+    height: 190px;
     border-radius: 5px;
 }
-.hero-two{
+
+.hero-two {
     background-color: white;
     width: 90%;
-    border-radius: 5px; 
+    border-radius: 5px;
     /* position:relative; */
     margin: auto;
     padding: 10px;
 }
-.hero-2{
+
+.hero-2 {
     display: flex !important;
     flex-wrap: nowrap !important;
     gap: 10px !important;
@@ -244,21 +598,25 @@
     scrollbar-width: none;
     overflow-y: hidden;
 }
-.hero-2::after{
+
+.hero-2::after {
     content: '';
     flex: 0 0 0px;
 }
-.hero-2 img{
+
+.hero-2 img {
     width: 140px;
     height: 140px;
     border-radius: 5px;
     display: block;
     object-fit: contain;
 }
-.hero-2 span{
+
+.hero-2 span {
     margin-top: 8px;
 }
-.hero-2 a{
+
+.hero-2 a {
     display: flex;
     flex-direction: column;
     flex: 0 0 145px;
@@ -268,17 +626,20 @@
     color: black;
     line-height: 17px;
 }
-.hero-2::-webkit-scrollbar{
+
+.hero-2::-webkit-scrollbar {
     display: none;
 }
-.hero-three{
+
+.hero-three {
     width: 90%;
     margin: auto;
     border-radius: 5px;
     background-color: #F1F1F2;
-    
+
 }
-.hero-ctn{
+
+.hero-ctn {
     margin-top: 30px;
     border-radius: 5px;
     background-color: #BE1D3E;
@@ -289,29 +650,33 @@
     justify-content: space-between;
     padding: 5px 50px;
 }
-.flash-sales span{
+
+.flash-sales span {
     font-size: 22px;
     font-weight: 600;
 }
-.flash-time h5{
+
+.flash-time h5 {
     font-size: 19px;
     font-weight: 400;
 }
-.flash-time span{
+
+.flash-time span {
     font-size: 22px;
     font-weight: 600;
     word-spacing: 5px;
 }
-.flash-link a{
+
+.flash-link a {
     color: white;
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
 }
-.hero-image{
+
+.hero-image {
     padding: 10px;
     display: flex;
-    /* position: relative; */
     flex-direction: row;
     gap: 7px;
     overflow: scroll;
@@ -319,35 +684,47 @@
     scroll-behavior: smooth;
     scrollbar-width: none;
 }
-.hero-image a{
+
+.hero-image a {
     text-decoration: none;
     position: relative;
+    background-color: #FFFFFF;
+    padding-left: 1.5px;
     color: black;
     line-height: 20px;
     border-radius: 5px;
 }
-.hero-image img{
+
+.hero-image img {
     width: 200px;
     height: 200px;
     border-radius: 5px;
 }
-.price h5{
+
+.price {
+    padding-left: 5px;
+}
+
+.price h5 {
     font-size: 18px;
+    color: #000;
     font-weight: 600;
 }
-.price h6{
+
+.price h6 {
     font-size: 14px;
     line-height: 5px;
     color: #757575;
     text-decoration: line-through;
 }
 
-.stock h4{
+.stock h4 {
     font-size: 14px;
     margin-bottom: 2px;
     color: #333;
 }
-.progress-bar{
+
+.progress-bar {
     width: 190px;
     height: 8px;
     background: #e0e0e0;
@@ -355,164 +732,195 @@
     border-radius: 50px;
     overflow: hidden;
 }
-.progress-fill{
+
+.progress-fill {
     width: 70%;
     height: 100%;
     background: #F68B1E;
     border-radius: 50px;
 }
-.rate{
+
+.rate {
     position: absolute;
     bottom: 260px;
     left: 145px;
     background-color: #fdf3e9;
 }
-.rate span{
-    color: #F9AF63;
-    padding: 3px;
-}
-.rate1{
-    position: absolute;
-    bottom: 260px;
-    left: 145px;
-    background-color: #fdf3e9;
-}
-.rate1 span{
-    color: #F9AF63;
-    padding: 3px;
-}
-.rate2{
-    position: absolute;
-    bottom: 260px;
-    left: 145px;
-    background-color: #fdf3e9;
-}
-.rate2 span{
-    color: #F9AF63;
-    padding: 3px;
-}
-.rate3{
-    position: absolute;
-    bottom: 260px;
-    left: 145px;
-    background-color: #fdf3e9;
-}
-.rate3 span{
-    color: #F9AF63;
-    padding: 3px;
-}
-.rate4{
-    position: absolute;
-    bottom: 260px;
-    left: 145px;
-    background-color: #fdf3e9;
-}
-.rate4 span{
-    color: #F9AF63;
-    padding: 3px;
-}
-.rate5{
-    position: absolute;
-    bottom: 260px;
-    left: 145px;
-    background-color: #fdf3e9;
-}
-.rate5 span{
-    color: #F9AF63;
-    padding: 3px;
-}
-.rate6{
-    position: absolute;
-    bottom: 260px;
-    left: 145px;
-    background-color: #fdf3e9;
-}
-.rate6 span{
-    color: #F9AF63;
-    padding: 3px;
-}
-.rate7{
-    position: absolute;
-    bottom: 260px;
-    left: 145px;
-    background-color: #fdf3e9;
-}
-.rate7 span{
-    color: #F9AF63;
-    padding: 3px;
-}
-.rate8{
-    position: absolute;
-    bottom: 260px;
-    left: 145px;
-    background-color: #fdf3e9;
-}
-.rate8 span{
-    color: #F9AF63;
-    padding: 3px;
-}
-.rate9{
-    position: absolute;
-   bottom: 260px;
-    left: 145px;
-    background-color: #fdf3e9;
-}
-.rate9 span{
-    color: #F9AF63;
-    padding: 3px;
-}
-.rate10{
-    position: absolute;
-    bottom: 260px;
-    left: 145px;
-    background-color: #fdf3e9;
-}
-.rate10 span{
-    color: #F9AF63;
-    padding: 3px;
-}
-.rate11{
-    position: absolute;
-   bottom: 260px;
-    left: 145px;
-    background-color: #fdf3e9;
-}
-.rate11 span{
-    color: #F9AF63;
-    padding: 3px;
-}
-.rate12{
-    position: absolute;
-    bottom: 260px;
-    left: 145px;
-    background-color: #fdf3e9;
-}
-.rate12 span{
-    color: #F9AF63;
-    padding: 3px;
-}
-.rate13{
-    position: absolute;
-   bottom: 260px;
-    left: 145px;
-    background-color: #fdf3e9;
-}
-.rate13 span{
-    color: #F9AF63;
-    padding: 3px;
-}
-.rate14{
-    position: absolute;
-    bottom: 260px;
-    left: 145px;
-    background-color: #fdf3e9;
-}
-.rate14 span{
+
+.rate span {
     color: #F9AF63;
     padding: 3px;
 }
 
-.hero-4{
+.rate1 {
+    position: absolute;
+    bottom: 260px;
+    left: 145px;
+    background-color: #fdf3e9;
+}
+
+.rate1 span {
+    color: #F9AF63;
+    padding: 3px;
+}
+
+.rate2 {
+    position: absolute;
+    bottom: 260px;
+    left: 145px;
+    background-color: #fdf3e9;
+}
+
+.rate2 span {
+    color: #F9AF63;
+    padding: 3px;
+}
+
+.rate3 {
+    position: absolute;
+    bottom: 260px;
+    left: 145px;
+    background-color: #fdf3e9;
+}
+
+.rate3 span {
+    color: #F9AF63;
+    padding: 3px;
+}
+
+.rate4 {
+    position: absolute;
+    bottom: 260px;
+    left: 145px;
+    background-color: #fdf3e9;
+}
+
+.rate4 span {
+    color: #F9AF63;
+    padding: 3px;
+}
+
+.rate5 {
+    position: absolute;
+    bottom: 260px;
+    left: 145px;
+    background-color: #fdf3e9;
+}
+
+.rate5 span {
+    color: #F9AF63;
+    padding: 3px;
+}
+
+.rate6 {
+    position: absolute;
+    bottom: 260px;
+    left: 145px;
+    background-color: #fdf3e9;
+}
+
+.rate6 span {
+    color: #F9AF63;
+    padding: 3px;
+}
+
+.rate7 {
+    position: absolute;
+    bottom: 260px;
+    left: 145px;
+    background-color: #fdf3e9;
+}
+
+.rate7 span {
+    color: #F9AF63;
+    padding: 3px;
+}
+
+.rate8 {
+    position: absolute;
+    bottom: 260px;
+    left: 145px;
+    background-color: #fdf3e9;
+}
+
+.rate8 span {
+    color: #F9AF63;
+    padding: 3px;
+}
+
+.rate9 {
+    position: absolute;
+    bottom: 260px;
+    left: 145px;
+    background-color: #fdf3e9;
+}
+
+.rate9 span {
+    color: #F9AF63;
+    padding: 3px;
+}
+
+.rate10 {
+    position: absolute;
+    bottom: 260px;
+    left: 145px;
+    background-color: #fdf3e9;
+}
+
+.rate10 span {
+    color: #F9AF63;
+    padding: 3px;
+}
+
+.rate11 {
+    position: absolute;
+    bottom: 260px;
+    left: 145px;
+    background-color: #fdf3e9;
+}
+
+.rate11 span {
+    color: #F9AF63;
+    padding: 3px;
+}
+
+.rate12 {
+    position: absolute;
+    bottom: 260px;
+    left: 145px;
+    background-color: #fdf3e9;
+}
+
+.rate12 span {
+    color: #F9AF63;
+    padding: 3px;
+}
+
+.rate13 {
+    position: absolute;
+    bottom: 260px;
+    left: 145px;
+    background-color: #fdf3e9;
+}
+
+.rate13 span {
+    color: #F9AF63;
+    padding: 3px;
+}
+
+.rate14 {
+    position: absolute;
+    bottom: 260px;
+    left: 145px;
+    background-color: #fdf3e9;
+}
+
+.rate14 span {
+    color: #F9AF63;
+    padding: 3px;
+}
+
+.hero-4 {
     width: 90%;
     display: grid;
     /* overflow: hidden; */
@@ -523,70 +931,1602 @@
     margin-top: 30px;
     padding: 10px;
 }
-.hero-4 a{
+
+.hero-4 a {
     text-decoration: none;
     text-align: center;
     line-height: 30px;
 }
-.hero-4 img{
+
+.hero-4 img {
     margin: auto;
     width: 200px;
     height: 270px;
     border-radius: 5px;
 }
-.hero-4 span{
+
+.hero-4 span {
     display: block;
     color: black;
     font-size: 16px;
     font-weight: 400;
 }
-footer{
-    background-color: #313133;
-    width: 100%;
-    padding-top: 10px;      
-}
-.footer-1{
+
+.hero-5 {
     width: 90%;
     margin: auto;
+    border-radius: 5px;
+    background-color: #F1F1F2;
 }
-.jumia-image{
+
+.top-color {
+    margin-top: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #FF9900;
+    height: 45px;
+}
+
+.seller ul {
     display: flex;
+    padding: 10px;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.seller a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+}
+
+.rates {
+    position: absolute;
+    bottom: 235px;
+    left: 150px;
+    background-color: #fdf3e9;
+}
+
+.rates span {
+    color: #F9AF63;
+    padding: 3px;
+}
+
+.hero-6 {
+    width: 90%;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #F1F1F2;
+}
+
+.hero-image1 a {
+    text-decoration: none;
+    position: relative;
+    background-color: #FFFFFF;
+    padding-left: 2px;
+    margin-bottom: 20px;
+    color: black;
+    line-height: 20px;
+    border-radius: 5px;
+}
+
+.hero-image2 a {
+    text-decoration: none;
+    position: relative;
+    background-color: #FFFFFF;
+    padding-left: 2px;
+    margin-bottom: 20px;
+    color: black;
+    line-height: 20px;
+    border-radius: 5px;
+}
+
+.hero-image3 a {
+    text-decoration: none;
+    position: relative;
+    background-color: #FFFFFF;
+    padding-left: 2px;
+    margin-bottom: 20px;
+    color: black;
+    line-height: 20px;
+    border-radius: 5px;
+}
+
+.hero-image4 a {
+    text-decoration: none;
+    position: relative;
+    background-color: #FFFFFF;
+    padding-left: 2px;
+    margin-bottom: 20px;
+    color: black;
+    line-height: 20px;
+    border-radius: 5px;
+}
+
+.hero-image5 a {
+    text-decoration: none;
+    position: relative;
+    background-color: #FFFFFF;
+    padding-left: 2px;
+    margin-bottom: 20px;
+    color: black;
+    line-height: 20px;
+    border-radius: 5px;
+}
+
+.deals {
+    margin-top: 10px;
+    padding: 15px;
+    gap: 7px;
+}
+
+.deals img {
+    margin: auto;
+    width: 195px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.deals a {
+    text-decoration: none;
+    line-height: 30px;
+}
+
+.deals span {
+    display: block;
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.rates {
+    position: absolute;
+    bottom: 235px;
+    left: 150px;
+    background-color: #fdf3e9;
+}
+
+.rates span {
+    color: #F9AF63;
+    padding: 2px;
+}
+
+article {
+    width: 90%;
+    margin: auto;
+    background-color: #f1f1f2;
+    margin-bottom: 70px;
+}
+
+.article-txt {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: left;
+}
+
+.article-txt h1 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.article-txt h2 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.article-txt h3 {
+    font-size: 14.04px;
+    font-weight: 400;
+}
+
+.article-txt p {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.article-txt strong {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #313133;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.footer-1 {
+    width: 90%;
+    display: flex;
+    gap: 30px;
+    margin: auto;
+}
+
+.jumia-image {
+    display: flex;
+    margin-top: -190px;
     gap: 1px;
     align-items: center;
 }
-.jumia-image span{
+
+.jumia-image span {
     color: whitesmoke;
     font-size: 35px;
     font-weight: 600;
 }
-.jumia-image img{
+
+.jumia-image img {
     width: 27px;
     margin-top: 3px;
     filter: invert(1) hue-rotate(185deg);
     background: black;
     border-radius: 50%;
 }
-.input-wrap{
+
+.new {
+    width: 40%;
+    margin: auto;
+}
+
+.question {
+    color: white;
+    width: 100%;
+}
+
+.question h4 {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.question p {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.question span {
+    color: #F68B1E;
+}
+
+.question span:hover {
+    text-decoration: underline;
+}
+
+.question h6 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.input-wrap {
+    margin-top: 10px;
     position: relative;
+    display: flex;
+    gap: 10px;
     width: 100%;
     max-width: 300px;
 }
-.input-wrap input{
-    width: 100%;
+
+.input-wrap input {
     padding: 10px 10px 10px 45px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
     outline: none;
 }
-.input-wrap input:focus{
+
+.input-wrap input:focus {
     border-color: #F68B1E;
 }
-.icon{
+
+.icon {
     position: absolute;
     left: 19px;
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
     color: #999;
+}
+
+.subscribe a {
+    text-decoration: none;
+}
+
+.subscribe button {
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+    border-radius: 5px;
+    background-color: #313133;
+    border: 1px solid white;
+    padding: 15px 25px;
+}
+
+.jumia-1 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.jumia-txt {
+    margin-top: 10px;
+    align-items: center;
+    color: white;
+    line-height: 10px;
+}
+
+.jumia-txt h5 {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.jumia-txt p {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.footer-2 {
+    background-color: #535357;
+}
+
+.footer-tag {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    gap: 60px;
+}
+
+.footer-tag ul {
+    margin-top: 20px;
+    list-style: none;
+}
+
+.footer-tag a {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.footer-tag a:hover {
+    text-decoration: underline;
+}
+
+.footer-tag span {
+    font-size: 12px;
+    line-height: 40px;
+    font-weight: 700;
+}
+
+.country {
+    margin-top: -35px;
+}
+
+.address {
+    width: 90%;
+    margin: auto;
+    color: white;
+}
+
+.us {
+    margin-top: 30px;
+    line-height: 5px;
+}
+
+.us h4 {
+    font-size: 13px;
+    line-height: 30px;
+    font-weight: 500;
+}
+
+.us p {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.us span {
+    font-size: 12.5px;
+    font-weight: 400;
+    color: #A3A3A6;
+}
+
+.footer-3 {
+    width: 90%;
+    padding-top: 30px;
+    display: flex;
+    gap: 50px;
+    align-items: start;
+    margin: auto;
+    color: white;
+}
+
+.footer-3 h4 {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.s-m {
+    list-style: none;
+    display: flex;
+    margin-left: -30px;
+    gap: 25px;
+    text-align: left;
+}
+
+.s-m i {
+    font-size: 27px;
+    color: white;
+}
+
+.s-m i:hover {
+    color: #F68B1E;
+}
+
+.m-k {
+    margin-top: 15px;
+    list-style: none;
+    gap: 25px;
+    margin-left: -30px;
+}
+
+.m-k img {
+    width: 35px;
+}
+
+.m-k img:hover {
+    background: #F68B1E;
+}
+
+.hhh {
+    height: 25px;
+}
+
+.footer-4 {
+    width: 95%;
+    margin: auto;
+}
+
+.footer-4 ul {
+    list-style: none;
+    gap: 110px;
+}
+
+.footer-4 a {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.f-4 {
+    padding-bottom: 30px;
+}
+
+.f-4 a:hover {
+    text-decoration: underline;
+}
+
+.hero-image a:hover {
+    transform: scale(.98);
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.025);
+}
+
+.hero-4 a:hover {
+    transform: scale(.98);
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.025);
+}
+
+.hero-image1 a:hover {
+    transform: scale(.98);
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.025);
+}
+
+.hero-image2 a:hover {
+    transform: scale(.98);
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.025);
+}
+
+.hero-image3 a:hover {
+    transform: scale(.98);
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.025);
+}
+
+.hero-image4 a:hover {
+    transform: scale(.98);
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.025);
+}
+
+.hero-image5 a:hover {
+    transform: scale(.98);
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.025);
+}
+
+.account-drop {
+
+    z-index: 1999;
+
+}
+
+.acct:hover .account-drop {
+    opacity: 1;
+    visibility: visible;
+}
+
+.account-dropdown {
+    background-color: white;
+    height: 208px;
+    width: 250px;
+    padding: px 30px;
+    position: absolute;
+    display: none;
+}
+
+.account:hover .account-dropdown {
+    display: block;
+}
+
+.account:hover {
+    background-color: #D4D4D6;
+}
+
+.acct-all {
+    margin-top: 30px;
+}
+
+.acctt {
+
+    width: 250px;
+    height: 40px;
+    padding: 0px 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: white;
+}
+
+.acctt:hover {
+    background-color: #D4D4D6;
+}
+
+
+/* ================================================================
+   WIDE DESKTOP  –  ≥ 1440px  (keep things from stretching too far)
+   ================================================================ */
+@media (min-width: 1440px) {
+
+    .third-header,
+    .hero_div,
+    .hero-two,
+    .hero-three,
+    .hero-4,
+    .hero-5,
+    .hero-6,
+    article,
+    .footer-1,
+    .footer-tag,
+    .address,
+    .footer-3,
+    .footer-4 {
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+@media (max-width:1304px) {
+   .third-header2{
+    display: none;
+   }
+
+    .hero-4 img {
+        width: 180px;
+    }
+
+    .deals {
+        padding: 5px;
+    }
+
+    .deals span {
+       display: block;
+    }
+
+    .deals img {
+        padding: 5px;
+        width: 185px;
+        height: 130px;
+    }
+
+    .rates span {
+        position: absolute;
+        top: 40px;
+        right: -10px;
+        background-color: #fdf3e9;
+    } 
+
+
+}
+
+
+@media (max-width:1387px) {
+   .third-header2{
+    display: none;
+   }
+
+    .hero-4 img {
+        width: 180px;
+    }
+
+    .deals {
+        padding: 5px;
+    }
+
+    .deals span {
+       display: block;
+    }
+
+    .deals img {
+        padding: 10px;
+        width: 185px;
+        height: 130px;
+    }
+
+    .rates span {
+        position: absolute;
+        top: 40px;
+        right: -10px;
+        background-color: #fdf3e9;
+    } 
+
+
+}
+
+/* ================================================================
+   WIDE DESKTOP  –  ≥ 14px  (keep things from stretching too far)
+   ================================================================ */
+
+@media (max-width:1248px) {
+   .third-header2{
+    display: none;
+   }
+
+    .hero-4 img {
+        width: 180px;
+    }
+
+    .deals {
+        padding: 5px;
+    }
+
+    .deals span {
+       display: block;
+    }
+
+    .deals img {
+        padding: 5px;
+        width: 175px;
+        height: 130px;
+    }
+
+    .rates span {
+        position: absolute;
+        top: 10px;
+        right: -10px;
+        background-color: #fdf3e9;
+    } 
+
+    .hero-image .rates span {
+        position: absolute;
+        top: -20px;
+        right: -30px;
+    }
+
+
+
+
+}
+
+
+/* ================================================================
+   TABLET  –  ≤ 1024px
+   ================================================================ */
+@media (max-width: 1024px) {
+
+    /* Navbar */
+    .third-header {
+        width: 100%;
+        margin: auto;
+        gap: 8px;
+        padding: 8px 3%;
+    }
+
+    .third-header img {
+        width: 100px;
+    }
+
+    .third-header2 {
+        padding: 8px 45px 8px 14px;
+    }
+
+    .third-header2-con {
+        width: 400px;
+    }
+
+    .third-header2 button {
+        position: absolute;
+        top: 2px;
+        padding: 5px;
+    }
+
+    .third-header3 a {
+        font-size: 13px;
+        gap: 4px;
+    }
+
+    /* Hero sidebar: hide on tablet, show hamburger/scroll approach */
+    .div_1 {
+        width: 190px;
+    }
+
+    /* Carousel */
+    .hero-body2 .carousel-item img {
+    margin-left: 0 !important; /* kill the 30px pushing slide right */
+    max-width: 100% !important; /* was 440px fixed width */
+  }
+
+  .hero-body2 .carousel {
+    position: relative;
+    overflow: hidden !important;
+  }
+  
+  .hero-body2 .carousel-inner {
+    overflow: hidden !important;
+    position: relative;
+  }
+  
+  /* Force category menu above carousel */
+  .div_1 {
+    position: relative;
+    z-index: 10 !important;
+  }
+  
+  .category-menu {
+    position: relative;
+    z-index: 11 !important;
+  }
+
+  .hero_div {
+    width: 95%;
+    margin-left: 40px;
+    display: flex;
+    gap: 15px; /* creates space between div1 and carousel */
+    align-items: flex-start;
+  }
+  .body-box2 img{
+    width: 250px;
+    height: 180px;
+  }
+  
+  .div_1 {
+    flex: 0 0 218px; /* lock menu width */
+    position: relative;
+    z-index: 10; /* menu stays on top */
+  }
+  
+  .hero-body2 {
+    flex: 1; /* take remaining space instead of 100% */
+    width: auto !important; /* cancel 100% so flex works */
+    padding: 10px;
+    position: relative;
+    z-index: 1; /* carousel stays below menu */
+    overflow: hidden;
+  }
+  
+  .hero-body2 .carousel-item img {
+    margin-left: 0 !important; /* remove that 30px push */
+    max-width: 100% !important;
+  }
+
+  .hero-two{
+    width: 90%;
+    margin: auto;
+    padding: 10px 10px;
+  }
+
+    /* Category grid  → 4 columns */
+    .hero-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+      .deals .hero-image1,
+  .deals .hero-image2,
+  .deals .hero-image3,
+  .deals .hero-image4,
+  .deals .hero-image5 {
+    display: flex !important;
+    gap: 12px !important;
+    overflow: hidden;
+  }
+  
+  /* Hide 5th and 6th product card in every row */
+  .deals [class^="hero-image"] > *:nth-child(5),
+  .deals [class^="hero-image"] > *:nth-child(6) {
+    display: none !important;
+  }
+  
+  /* Make remaining 4 cards fit */
+  .deals [class^="hero-image"] > * {
+    flex: 0 0 calc(25% - 9px) !important; /* 4 per row */
+    max-width: calc(25% - 9px) !important;
+  }
+  
+  /* Fix image size so no overflow */
+  .deals [class^="hero-image"] img {
+    width: 100% !important;
+    height: 160px !important;
+    object-fit: cover;
+  }
+  
+  /* Reduce text size so it doesn't wrap */
+  .deals .card-title,
+  .deals .price {
+    font-size: 12px !important;
+    line-height: 1.2;
+  }
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* Fix 1: stop hero_div from overflowing right */
+    .hero_div {
+        width: 95%;
+        margin: 10px auto;   /* remove the bad margin-left: 40px */
+        margin-left: 0;
+    }
+
+    /* Fix 2: category flyout panels are wider than the viewport — disable them
+       at this size, same approach as the ≤768px breakpoint */
+    .category-panel,
+    .drop-down-m,
+    .second-drops,
+    .panel-health,
+    .panel-home,
+    .panel-electronics,
+    .panel-fashion,
+    .panel-supermarket,
+    .panel-computing,
+    .panel-baby,
+    .panel-gaming,
+    .panel-other {
+        display: none !important;
+    }
+
+    .has-panel .category-row::after {
+        content: "";
+    }
+
+    /* safety net so nothing else triggers a scrollbar */
+    body, html {
+        overflow-x: hidden;
+    }
+}
+
+
+@media (max-width: 1124px) {
+
+    /* Navbar */
+    .third-header {
+        width: 100%;
+        margin: auto;
+        gap: 8px;
+        padding: 8px 3%;
+    }
+
+    .third-header img {
+        width: 100px;
+    }
+
+    .third-header2 {
+        padding: 8px 45px 8px 14px;
+    }
+
+    .third-header2-con {
+        width: 400px;
+    }
+
+    .third-header2 button {
+        position: absolute;
+        top: 2px;
+        padding: 5px;
+    }
+
+    .third-header3 a {
+        font-size: 13px;
+        gap: 4px;
+    }
+
+    /* Hero sidebar: hide on tablet, show hamburger/scroll approach */
+    .div_1 {
+        width: 190px;
+    }
+
+    /* Carousel */
+    .hero-body2 .carousel-item img {
+    margin-left: 0 !important; /* kill the 30px pushing slide right */
+    max-width: 100% !important; /* was 440px fixed width */
+  }
+
+  .hero-body2 .carousel {
+    position: relative;
+    overflow: hidden !important;
+  }
+  
+  .hero-body2 .carousel-inner {
+    overflow: hidden !important;
+    position: relative;
+  }
+  
+  /* Force category menu above carousel */
+  .div_1 {
+    position: relative;
+    z-index: 10 !important;
+  }
+  
+  .category-menu {
+    position: relative;
+    z-index: 11 !important;
+  }
+
+  .hero_div {
+    width: 95%;
+    margin-left: 40px;
+    display: flex;
+    gap: 15px; /* creates space between div1 and carousel */
+    align-items: flex-start;
+  }
+  .body-box2 img{
+    width: 250px;
+    height: 180px;
+  }
+  
+  .div_1 {
+    flex: 0 0 218px; /* lock menu width */
+    position: relative;
+    z-index: 10; /* menu stays on top */
+  }
+  
+  .hero-body2 {
+    flex: 1; /* take remaining space instead of 100% */
+    width: auto !important; /* cancel 100% so flex works */
+    padding: 10px;
+    position: relative;
+    z-index: 1; /* carousel stays below menu */
+    overflow: hidden;
+  }
+  
+  .hero-body2 .carousel-item img {
+    margin-left: 0 !important; /* remove that 30px push */
+    max-width: 100% !important;
+  }
+
+  .hero-two{
+    width: 90%;
+    margin: auto;
+    padding: 10px 10px;
+  }
+
+    /* Category grid  → 4 columns */
+    .hero-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+      .deals .hero-image1,
+  .deals .hero-image2,
+  .deals .hero-image3,
+  .deals .hero-image4,
+  .deals .hero-image5 {
+    display: flex !important;
+    gap: 12px !important;
+    overflow: hidden;
+  }
+  
+  /* Hide 5th and 6th product card in every row */
+  .deals [class^="hero-image"] > *:nth-child(5),
+  .deals [class^="hero-image"] > *:nth-child(6) {
+    display: none !important;
+  }
+  
+  /* Make remaining 4 cards fit */
+  .deals [class^="hero-image"] > * {
+    flex: 0 0 calc(25% - 9px) !important; /* 4 per row */
+    max-width: calc(25% - 9px) !important;
+  }
+  
+  /* Fix image size so no overflow */
+  .deals [class^="hero-image"] img {
+    width: 100% !important;
+    height: 160px !important;
+    object-fit: cover;
+  }
+  
+  /* Reduce text size so it doesn't wrap */
+  .deals .card-title,
+  .deals .price {
+    font-size: 12px !important;
+    line-height: 1.2;
+  }
+
+}
+
+
+
+/* ================================================================
+   TABLET PORTRAIT / LARGE MOBILE  –  ≤ 768px
+   ================================================================ */
+@media (max-width: 768px) {
+
+  .container, .brand-day-section, .carousel-wrapper { /* use your actual parent class */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* 2. Make carousel take 100% */
+  .carousel, 
+  .carousel-inner,
+  .carousel-item {
+    width: 100% !important;
+    margin: 0 !important;
+    transform: none !important; /* fixes zoom-out/scale */
+  }
+
+  /* 3. Make the image actually fill it */
+  .carousel-item img, 
+  .carousel-item .banner-img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: cover; /* fills without white space */
+    display: block;
+  }
+
+    /* first-header strip */
+    .first-header img {
+        width: 100vw;
+    }
+
+    /* second-header: stack and hide secondary nav */
+    .second-header2 {
+        display: none;
+    }
+
+    .second-header {
+        width: 95%;
+        justify-content: space-between;
+    }
+
+    .second-header1 a {
+        font-size: 11px;
+    }
+
+    /* third-header / navbar */
+    .third-header {
+        flex-wrap: wrap;
+        padding: 8px 4%;
+        gap: 6px;
+    }
+
+    .third-header img {
+        width: 90px;
+    }
+
+    .third-header2 {
+        order: 3;
+        width: 100%;
+        padding: 8px 40px 8px 12px;
+    }
+
+    .third-header2-con {
+        width: 100%;
+    }
+
+    .third-header2-con span {
+        font-size: 13px;
+    }
+
+    .third-header3 {
+        gap: 12px;
+    }
+
+    .third-header3 a {
+        font-size: 0;
+        gap: 0;
+    }
+
+    .third-header3 a i {
+        font-size: 18px;
+    }
+
+    .account-dropdown {
+        width: 220px;
+    }
+
+    /* hero section: stack sidebar above carousel */
+    .hero_div {
+        flex-direction: column;
+        width: 92%;
+        margin: 10px auto;
+        gap: 10px;
+    }
+
+    .div_1 {
+        width: 100%;
+        flex: 0 0 auto;
+        overflow-x: auto;
+    }
+
+    .category-menu {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        padding: 6px;
+        scrollbar-width: none;
+        white-space: nowrap;
+    }
+
+    .category-menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .category-item {
+        flex: 0 0 auto;
+    }
+
+    /* Convert flyouts into a click-to-open accordion under the menu */
+    .category-panel,
+    .drop-down-m,
+    .second-drops,
+    .panel-health,
+    .panel-home,
+    .panel-electronics,
+    .panel-fashion,
+    .panel-supermarket,
+    .panel-computing,
+    .panel-baby,
+    .panel-gaming,
+    .panel-other {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        left: auto !important;
+        top: auto !important;
+        border: none;
+        box-shadow: none;
+        padding: 8px 0 8px 10px;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transition: none;
+        display: none; /* closed by default, JS toggles this */
+    }
+
+    .category-item.open .category-panel,
+    .category-item.open .drop-down-m,
+    .category-item.open .second-drops,
+    .category-item.open .panel-health,
+    .category-item.open .panel-home,
+    .category-item.open .panel-electronics,
+    .category-item.open .panel-fashion,
+    .category-item.open .panel-supermarket,
+    .category-item.open .panel-computing,
+    .category-item.open .panel-baby,
+    .category-item.open .panel-gaming,
+    .category-item.open .panel-other {
+        display: block;
+    }
+
+    .content-dr {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .itm-1 {
+        height: auto;
+    }
+
+    .category-item {
+        flex: 0 0 auto;
+        white-space: normal;
+    }
+
+    .has-panel:hover .category-panel,
+    .has-panel:hover .drop-down-m,
+    .has-panel:hover .second-drops {
+        /* cancel desktop hover behavior on touch sizes */
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .hero-body2 {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .hero-body2 .carousel,
+    .hero-body2 .carousel-inner,
+    .hero-body2 .carousel-item {
+        height: 220px;
+    }
+
+    .carousel, .carousel-inner,
+    .carousel-item, .carousel-item img {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .hero-body3 {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .body-box1 {
+        width: 100%;
+        height: auto;
+    }
+
+    .body-box2 {
+        width: 100%;
+    }
+
+    .body-box2 img {
+        height: 150px;
+    }
+
+    /* hero-2 quick links */
+    .hero-two {
+        width: 92%;
+        padding: 8px;
+    }
+
+    .hero-2 img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .hero-2 a {
+        flex: 0 0 95px;
+    }
+
+    .hero-2 span {
+        font-size: 12px;
+    }
+
+    /* flash sales banner */
+    .hero-ctn {
+        padding: 5px 15px;
+        flex-wrap: wrap;
+        height: auto;
+        gap: 4px;
+    }
+
+    .flash-sales span {
+        font-size: 16px;
+    }
+
+    .flash-time h5 {
+        font-size: 13px;
+    }
+
+    .flash-time span {
+        font-size: 15px;
+    }
+
+    .flash-link a {
+        font-size: 13px;
+    }
+
+    /* flash sale product strip */
+    .hero-image img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .rate,
+    .rate1, .rate2, .rate3, .rate4, .rate5, .rate6,
+    .rate7, .rate8, .rate9, .rate10, .rate11, .rate12,
+    .rate13, .rate14 {
+        bottom: 200px;
+        left: 100px;
+    }
+
+    .progress-bar {
+        width: 130px;
+    }
+
+    /* category grid (hero-4) */
+    .hero-4 {
+        width: 92%;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero-4 img {
+        width: 100px;
+        height: 130px;
+    }
+
+    .hero-4 span {
+        font-size: 13px;
+    }
+
+    /* top sellers / hero-5 */
+    .hero-5 {
+        width: 92%;
+    }
+
+    .rates {
+        bottom: 175px;
+        left: 105px;
+    }
+
+    /* anniversary deals grid - already 4-up at 1024px rule, tighten further */
+    .deals [class^="hero-image"] > * {
+        flex: 0 0 calc(33.33% - 8px) !important;
+        max-width: calc(33.33% - 8px) !important;
+    }
+
+    .deals [class^="hero-image"] > *:nth-child(4) {
+        display: none !important;
+    }
+
+    .deals [class^="hero-image"] img {
+        height: 110px !important;
+    }
+
+    /* article */
+    .article-txt h1 {
+        font-size: 19px;
+    }
+
+    .article-txt h2 {
+        font-size: 15px;
+    }
+
+    .article-txt p {
+        font-size: 12.5px;
+    }
+
+    /* footer */
+    .footer-1 {
+        width: 92%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .jumia-image {
+        margin-top: 0;
+        justify-content: center;
+    }
+
+    .new {
+        width: 100%;
+    }
+
+    .input-wrap {
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .footer-tag {
+        width: 92%;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    .country {
+        margin-top: 0;
+    }
+
+    .footer-3 {
+        width: 92%;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    .footer-4 ul {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .hero-body3 {
+        display: none;
+    }
+
+    .hero_div {
+        gap: 20px; /* increase from 10px for more space between div_1 and hero-body2 */
+    }
+}
+
+
+/* ================================================================
+   MOBILE  –  ≤ 480px
+   ================================================================ */
+@media (max-width: 480px) {
+
+    .third-header img {
+        width: 75px;
+    }
+
+    .third-header3 {
+        gap: 10px;
+    }
+
+    .circle {
+        margin-left: -50px;
+    }
+
+    .third-header3 .chevron {
+        display: none;
+    }
+
+    /* hero carousel even shorter on small phones */
+    .hero-body2 .carousel,
+    .hero-body2 .carousel-inner,
+    .hero-body2 .carousel-item {
+        height: 160px;
+    }
+
+    .hero-body3 {
+        flex-direction: column;
+    }
+
+    .body-box1 {
+        gap: 6px;
+        padding: 8px;
+    }
+
+    .box1-box img,
+    .box2-box img,
+    .box3-box img {
+        width: 28px;
+    }
+
+    .hero-2 img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .hero-2 a {
+        flex: 0 0 75px;
+    }
+
+    .hero-2 span {
+        font-size: 11px;
+    }
+
+    /* flash sales: stack vertically */
+    .hero-ctn {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 12px;
+    }
+
+    .hero-image img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .price h5 {
+        font-size: 14px;
+    }
+
+    .price h6 {
+        font-size: 11px;
+    }
+
+    .stock h4 {
+        font-size: 11px;
+    }
+
+    .progress-bar {
+        width: 100px;
+    }
+
+    .rate,
+    .rate1, .rate2, .rate3, .rate4, .rate5, .rate6,
+    .rate7, .rate8, .rate9, .rate10, .rate11, .rate12,
+    .rate13, .rate14 {
+        bottom: 150px;
+        left: 75px;
+    }
+
+    /* category grid: 2-up */
+    .hero-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-4 img {
+        width: 90px;
+        height: 110px;
+    }
+
+    /* top sellers strip */
+    .rates {
+        bottom: 135px;
+        left: 78px;
+    }
+
+    /* anniversary deals: 2-up on phones */
+    .deals [class^="hero-image"] > * {
+        flex: 0 0 calc(50% - 6px) !important;
+        max-width: calc(50% - 6px) !important;
+    }
+
+    .deals [class^="hero-image"] > *:nth-child(3) {
+        display: none !important;
+    }
+
+    .deals [class^="hero-image"] img {
+        height: 120px !important;
+    }
+
+    article {
+        margin-bottom: 40px;
+    }
+
+    .article-txt {
+        padding: 10px;
+    }
+
+    .article-txt h1 {
+        font-size: 16px;
+    }
+
+    .article-txt h2 {
+        font-size: 14px;
+    }
+
+    .article-txt h3 {
+        font-size: 13px;
+    }
+
+    .article-txt p {
+        font-size: 12px;
+    }
+
+    /* footer tighter stacking */
+    .footer-tag,
+    .footer-3 {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .s-m {
+        margin-left: 0;
+        gap: 18px;
+    }
+
+    .m-k {
+        margin-left: 0;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .new {
+        display: none;
+    }
+
+    .footer-4 ul {
+        flex-direction: column;
+        gap: 8px;
+    }
 }

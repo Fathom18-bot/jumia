@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+}
+.jumia{
+    display: flex;
+    align-items:center ;
+    flex-direction: column;
+    line-height: 1;
+    margin: 100px auto;
+}
+.jumia img{
+    width: 60px;
+}
+.jumia h1{
+margin-top: 20px;
+font-family: Roboto, sans-serif;
+font-size: 22px;
+font-weight: 700;
+line-height: normal;
+color: rgb(0, 0, 0);
+}
+.jumia p{
+font-family: Roboto, sans-serif;
+font-size: 17px;
+font-weight: 500;
+line-height: 24px;
+color: rgb(74, 74, 74);
+}
+.jumia input{
+    margin-top: 20px;
+    padding: 15px;
+    width: 500px;
+} 
+.jumia button{
+    font-size: 16px;
+    font-weight: 700;
+    background-color: orange;
+    width: 500px;
+    padding: 20px;
+    border: none;
+    margin-top: 40px;
+    color: white;
+}
+
+.jumia-txt{
+    margin-top: 30px;
+}
+
+.jumia-txt p{
+    position: relative;
+    margin-top: 20px;
+}
+.jumia span{
+    font-size: 16px;
+    font-weight: 100;
+    position: absolute;
+    padding: 10px;
+    left: 90px;
+    top: -5px;
+}
+.jumia-img{
+    display: flex;
+    gap: 20px;
+}
+
+.jumia-img img{
+    width: 50px;
+}
+
+.terms{
+    margin-top: 40px;
+}
+
+.terms h3{
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.terms ul{
+    padding-left: 5px;
+    margin: auto;
+    display: flex;
+    gap: 5px;
+    list-style: none;
+}
+
+.terms a{
+    color: #F68B1E;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.foot{
+    margin-top: 40px;
+}
+
+.foot h3{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.foot img{
+    margin: 20px 150px;
+    width: 100px;
+}
