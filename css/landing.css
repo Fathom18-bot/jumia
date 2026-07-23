@@ -2034,14 +2034,17 @@ footer {
         padding: 8px 40px 8px 12px;
     }
 
-    .third-header2-con {
+    /* .third-header2-con {
         width: 100%;
     }
 
     .third-header2-con span {
         font-size: 13px;
+    } */
+     
+    .third-header2{
+        display: none;
     }
-
     .third-header3 {
         gap: 12px;
     }
@@ -2534,5 +2537,9 @@ footer {
     .footer-4 ul {
         flex-direction: column;
         gap: 8px;
+    }
+
+    .third-header2 {
+        display: none;
     }
 }
