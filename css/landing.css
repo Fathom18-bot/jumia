@@ -107,7 +107,7 @@
 }
 
 .third-header2 {
-    background-color: blue;
+    background-color: #F1F1F2;
     border-radius: 30px;
     position: relative;
     display: flex;
@@ -1516,9 +1516,9 @@ footer {
 
 
 @media (max-width:1304px) {
-   .third-header2{
+   /* .third-header2{
     display: none;
-   }
+   } */
 
     .hero-4 img {
         width: 180px;
