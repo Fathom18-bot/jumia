@@ -159,8 +159,7 @@
 }
 
 .hero {
-    background-image: url("/multimedia/image/imgi_231_BG_TAKEOVER26.jpg");
-   
+    background: url("/multimedia/image/imgi_231_BG_TAKEOVER26.jpg");   
     border: 3px solid black;
     width: 100%;
     margin-top: 10px;
