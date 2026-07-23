@@ -955,6 +955,7 @@
     width: 90%;
     margin: auto;
     border-radius: 5px;
+    overflow-x: hidden;
     background-color: #F1F1F2;
 }
 
@@ -980,14 +981,14 @@
     color: black;
 }
 
-.rates {
+.rated {
     position: absolute;
     bottom: 235px;
     left: 150px;
     background-color: #fdf3e9;
 }
 
-.rates span {
+.rated span {
     color: #F9AF63;
     padding: 3px;
 }
@@ -1515,11 +1516,15 @@ footer {
     .third-header2-con {
         width: 400px;
     }
+
+    .hero-6 {
+        padding: 20px;
+    }
 }
 
 
 @media (max-width:1304px) {
-    
+
     .third-header2-con {
         width: 400px;
     }
@@ -1533,7 +1538,7 @@ footer {
     }
 
     .deals span {
-       display: block;
+        display: block;
     }
 
     .deals img {
@@ -1547,7 +1552,7 @@ footer {
         top: 40px;
         right: -10px;
         background-color: #fdf3e9;
-    } 
+    }
 
 
 }
@@ -1558,7 +1563,7 @@ footer {
     .third-header2-con {
         width: 400px;
     }
-   
+
 
     .hero-4 img {
         width: 180px;
@@ -1569,7 +1574,7 @@ footer {
     }
 
     .deals span {
-       display: block;
+        display: block;
     }
 
     .deals img {
@@ -1583,7 +1588,7 @@ footer {
         top: 40px;
         right: -10px;
         background-color: #fdf3e9;
-    } 
+    }
 
 
 }
@@ -1593,9 +1598,9 @@ footer {
    ================================================================ */
 
 @media (max-width:1248px) {
-   .third-header2-con{
-    width: 400px;
-   }
+    .third-header2-con {
+        width: 400px;
+    }
 
     .hero-4 img {
         width: 180px;
@@ -1606,7 +1611,7 @@ footer {
     }
 
     .deals span {
-       display: block;
+        display: block;
     }
 
     .deals img {
@@ -1620,7 +1625,7 @@ footer {
         top: 10px;
         right: -10px;
         background-color: #fdf3e9;
-    } 
+    }
 
     .hero-image .rates span {
         position: absolute;
@@ -1677,118 +1682,134 @@ footer {
 
     /* Carousel */
     .hero-body2 .carousel-item img {
-    margin-left: 0 !important; /* kill the 30px pushing slide right */
-    max-width: 100% !important; /* was 440px fixed width */
-  }
+        margin-left: 0 !important;
+        /* kill the 30px pushing slide right */
+        max-width: 100% !important;
+        /* was 440px fixed width */
+    }
 
-  .hero-body2 .carousel {
-    position: relative;
-    overflow: hidden !important;
-  }
-  
-  .hero-body2 .carousel-inner {
-    overflow: hidden !important;
-    position: relative;
-  }
-  
-  /* Force category menu above carousel */
-  .div_1 {
-    position: relative;
-    z-index: 10 !important;
-  }
-  
-  .category-menu {
-    position: relative;
-    z-index: 11 !important;
-  }
+    .hero-body2 .carousel {
+        position: relative;
+        overflow: hidden !important;
+    }
 
-  .hero_div {
-    width: 95%;
-    margin-left: 40px;
-    display: flex;
-    gap: 15px; /* creates space between div1 and carousel */
-    align-items: flex-start;
-  }
-  .body-box2 img{
-    width: 250px;
-    height: 180px;
-  }
-  
-  .div_1 {
-    flex: 0 0 218px; /* lock menu width */
-    position: relative;
-    z-index: 10; /* menu stays on top */
-  }
-  
-  .hero-body2 {
-    flex: 1; /* take remaining space instead of 100% */
-    width: auto !important; /* cancel 100% so flex works */
-    padding: 10px;
-    position: relative;
-    z-index: 1; /* carousel stays below menu */
-    overflow: hidden;
-  }
-  
-  .hero-body2 .carousel-item img {
-    margin-left: 0 !important; /* remove that 30px push */
-    max-width: 100% !important;
-  }
+    .hero-body2 .carousel-inner {
+        overflow: hidden !important;
+        position: relative;
+    }
 
-  .hero-two{
-    width: 90%;
-    margin: auto;
-    padding: 10px 10px;
-  }
+    /* Force category menu above carousel */
+    .div_1 {
+        position: relative;
+        z-index: 10 !important;
+    }
+
+    .category-menu {
+        position: relative;
+        z-index: 11 !important;
+    }
+
+    .hero_div {
+        width: 95%;
+        margin-left: 40px;
+        display: flex;
+        gap: 15px;
+        /* creates space between div1 and carousel */
+        align-items: flex-start;
+    }
+
+    .body-box2 img {
+        width: 250px;
+        height: 180px;
+    }
+
+    .div_1 {
+        flex: 0 0 218px;
+        /* lock menu width */
+        position: relative;
+        z-index: 10;
+        /* menu stays on top */
+    }
+
+    .hero-body2 {
+        flex: 1;
+        /* take remaining space instead of 100% */
+        width: auto !important;
+        /* cancel 100% so flex works */
+        padding: 10px;
+        position: relative;
+        z-index: 1;
+        /* carousel stays below menu */
+        overflow: hidden;
+    }
+
+    .hero-body2 .carousel-item img {
+        margin-left: 0 !important;
+        /* remove that 30px push */
+        max-width: 100% !important;
+    }
+
+    .hero-two {
+        width: 90%;
+        margin: auto;
+        padding: 10px 10px;
+    }
 
     /* Category grid  → 4 columns */
     .hero-4 {
         grid-template-columns: repeat(4, 1fr);
     }
 
-      .deals .hero-image1,
-  .deals .hero-image2,
-  .deals .hero-image3,
-  .deals .hero-image4,
-  .deals .hero-image5 {
-    display: flex !important;
-    gap: 12px !important;
-    overflow: hidden;
-  }
-  
-  /* Hide 5th and 6th product card in every row */
-  .deals [class^="hero-image"] > *:nth-child(5),
-  .deals [class^="hero-image"] > *:nth-child(6) {
-    display: none !important;
-  }
-  
-  /* Make remaining 4 cards fit */
-  .deals [class^="hero-image"] > * {
-    flex: 0 0 calc(25% - 9px) !important; /* 4 per row */
-    max-width: calc(25% - 9px) !important;
-  }
-  
-  /* Fix image size so no overflow */
-  .deals [class^="hero-image"] img {
-    width: 100% !important;
-    height: 160px !important;
-    object-fit: cover;
-  }
-  
-  /* Reduce text size so it doesn't wrap */
-  .deals .card-title,
-  .deals .price {
-    font-size: 12px !important;
-    line-height: 1.2;
-  }
+    .deals .hero-image1,
+    .deals .hero-image2,
+    .deals .hero-image3,
+    .deals .hero-image4,
+    .deals .hero-image5 {
+        display: flex !important;
+        gap: 12px !important;
+        overflow: hidden;
+    }
+
+    /* Hide 5th and 6th product card in every row */
+    .deals [class^="hero-image"]>*:nth-child(5),
+    .deals [class^="hero-image"]>*:nth-child(6) {
+        display: none !important;
+    }
+
+    /* Make remaining 4 cards fit */
+    .deals [class^="hero-image"]>* {
+        flex: 0 0 calc(25% - 9px) !important;
+        /* 4 per row */
+        max-width: calc(25% - 9px) !important;
+    }
+
+    /* Fix image size so no overflow */
+    .deals [class^="hero-image"] img {
+        width: 100% !important;
+        height: 160px !important;
+        object-fit: cover;
+    }
+
+    /* Reduce text size so it doesn't wrap */
+    .deals .card-title,
+    .deals .price {
+        font-size: 12px !important;
+        line-height: 1.2;
+    }
+
+    .rates {
+        position: absolute;
+        top: 0;
+        left: 200px;
+    }
 
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
 
-    /* Fix 1: stop hero_div from overflowing right */
     .hero_div {
         width: 95%;
-        margin: 10px auto;   /* remove the bad margin-left: 40px */
+        margin: 10px auto;
         margin-left: 0;
     }
 
@@ -1813,8 +1834,8 @@ footer {
         content: "";
     }
 
-    /* safety net so nothing else triggers a scrollbar */
-    body, html {
+    body,
+    html {
         overflow-x: hidden;
     }
 }
@@ -1860,109 +1881,120 @@ footer {
 
     /* Carousel */
     .hero-body2 .carousel-item img {
-    margin-left: 0 !important; /* kill the 30px pushing slide right */
-    max-width: 100% !important; /* was 440px fixed width */
-  }
+        margin-left: 0 !important;
+        /* kill the 30px pushing slide right */
+        max-width: 100% !important;
+        /* was 440px fixed width */
+    }
 
-  .hero-body2 .carousel {
-    position: relative;
-    overflow: hidden !important;
-  }
-  
-  .hero-body2 .carousel-inner {
-    overflow: hidden !important;
-    position: relative;
-  }
-  
-  /* Force category menu above carousel */
-  .div_1 {
-    position: relative;
-    z-index: 10 !important;
-  }
-  
-  .category-menu {
-    position: relative;
-    z-index: 11 !important;
-  }
+    .hero-body2 .carousel {
+        position: relative;
+        overflow: hidden !important;
+    }
 
-  .hero_div {
-    width: 95%;
-    margin-left: 40px;
-    display: flex;
-    gap: 15px; /* creates space between div1 and carousel */
-    align-items: flex-start;
-  }
-  .body-box2 img{
-    width: 250px;
-    height: 180px;
-  }
-  
-  .div_1 {
-    flex: 0 0 218px; /* lock menu width */
-    position: relative;
-    z-index: 10; /* menu stays on top */
-  }
-  
-  .hero-body2 {
-    flex: 1; /* take remaining space instead of 100% */
-    width: auto !important; /* cancel 100% so flex works */
-    padding: 10px;
-    position: relative;
-    z-index: 1; /* carousel stays below menu */
-    overflow: hidden;
-  }
-  
-  .hero-body2 .carousel-item img {
-    margin-left: 0 !important; /* remove that 30px push */
-    max-width: 100% !important;
-  }
+    .hero-body2 .carousel-inner {
+        overflow: hidden !important;
+        position: relative;
+    }
 
-  .hero-two{
-    width: 90%;
-    margin: auto;
-    padding: 10px 10px;
-  }
+    /* Force category menu above carousel */
+    .div_1 {
+        position: relative;
+        z-index: 10 !important;
+    }
+
+    .category-menu {
+        position: relative;
+        z-index: 11 !important;
+    }
+
+    .hero_div {
+        width: 95%;
+        margin-left: 40px;
+        display: flex;
+        gap: 15px;
+        /* creates space between div1 and carousel */
+        align-items: flex-start;
+    }
+
+    .body-box2 img {
+        width: 250px;
+        height: 180px;
+    }
+
+    .div_1 {
+        flex: 0 0 218px;
+        /* lock menu width */
+        position: relative;
+        z-index: 10;
+        /* menu stays on top */
+    }
+
+    .hero-body2 {
+        flex: 1;
+        /* take remaining space instead of 100% */
+        width: auto !important;
+        /* cancel 100% so flex works */
+        padding: 10px;
+        position: relative;
+        z-index: 1;
+        /* carousel stays below menu */
+        overflow: hidden;
+    }
+
+    .hero-body2 .carousel-item img {
+        margin-left: 0 !important;
+        /* remove that 30px push */
+        max-width: 100% !important;
+    }
+
+    .hero-two {
+        width: 90%;
+        margin: auto;
+        padding: 10px 10px;
+    }
 
     /* Category grid  → 4 columns */
     .hero-4 {
         grid-template-columns: repeat(4, 1fr);
     }
 
-      .deals .hero-image1,
-  .deals .hero-image2,
-  .deals .hero-image3,
-  .deals .hero-image4,
-  .deals .hero-image5 {
-    display: flex !important;
-    gap: 12px !important;
-    overflow: hidden;
-  }
-  
-  /* Hide 5th and 6th product card in every row */
-  .deals [class^="hero-image"] > *:nth-child(5),
-  .deals [class^="hero-image"] > *:nth-child(6) {
-    display: none !important;
-  }
-  
-  /* Make remaining 4 cards fit */
-  .deals [class^="hero-image"] > * {
-    flex: 0 0 calc(25% - 9px) !important; /* 4 per row */
-    max-width: calc(25% - 9px) !important;
-  }
-  
-  /* Fix image size so no overflow */
-  .deals [class^="hero-image"] img {
-    width: 100% !important;
-    height: 160px !important;
-    object-fit: cover;
-  }
-  
-  /* Reduce text size so it doesn't wrap */
-  .deals .card-title,
-  .deals .price {
-    font-size: 12px !important;
-    line-height: 1.2;
-  }
+    .deals .hero-image1,
+    .deals .hero-image2,
+    .deals .hero-image3,
+    .deals .hero-image4,
+    .deals .hero-image5 {
+        display: flex !important;
+        gap: 12px !important;
+        overflow: hidden;
+    }
+
+    /* Hide 5th and 6th product card in every row */
+    .deals [class^="hero-image"]>*:nth-child(5),
+    .deals [class^="hero-image"]>*:nth-child(6) {
+        display: none !important;
+    }
+
+    /* Make remaining 4 cards fit */
+    .deals [class^="hero-image"]>* {
+        flex: 0 0 calc(25% - 9px) !important;
+        /* 4 per row */
+        max-width: calc(25% - 9px) !important;
+    }
+
+    /* Fix image size so no overflow */
+    .deals [class^="hero-image"] img {
+        width: 100% !important;
+        height: 160px !important;
+        object-fit: cover;
+    }
+
+    /* Reduce text size so it doesn't wrap */
+    .deals .card-title,
+    .deals .price {
+        font-size: 12px !important;
+        line-height: 1.2;
+    }
 
 }
 
@@ -1973,30 +2005,35 @@ footer {
    ================================================================ */
 @media (max-width: 768px) {
 
-  .container, .brand-day-section, .carousel-wrapper { /* use your actual parent class */
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    max-width: 100% !important;
-  }
+    .container,
+    .brand-day-section,
+    .carousel-wrapper {
+        /* use your actual parent class */
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 100% !important;
+    }
 
-  /* 2. Make carousel take 100% */
-  .carousel, 
-  .carousel-inner,
-  .carousel-item {
-    width: 100% !important;
-    margin: 0 !important;
-    transform: none !important; /* fixes zoom-out/scale */
-  }
+    /* 2. Make carousel take 100% */
+    .carousel,
+    .carousel-inner,
+    .carousel-item {
+        width: 100% !important;
+        margin: 0 !important;
+        transform: none !important;
+        /* fixes zoom-out/scale */
+    }
 
-  /* 3. Make the image actually fill it */
-  .carousel-item img, 
-  .carousel-item .banner-img {
-    width: 100% !important;
-    height: auto !important;
-    max-width: 100% !important;
-    object-fit: cover; /* fills without white space */
-    display: block;
-  }
+    /* 3. Make the image actually fill it */
+    .carousel-item img,
+    .carousel-item .banner-img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        object-fit: cover;
+        /* fills without white space */
+        display: block;
+    }
 
     /* first-header strip */
     .first-header img {
@@ -2034,20 +2071,18 @@ footer {
         padding: 8px 40px 8px 12px;
     }
 
-    /* .third-header2-con {
+    .third-header2-con {
         width: 100%;
     }
 
     .third-header2-con span {
         font-size: 13px;
-    } */
-     
-    .third-header2{
-        display: none;
     }
+
     .third-header3 {
-        gap: 12px;
+        gap: 20px;
     }
+
 
     .third-header3 a {
         font-size: 0;
@@ -2056,6 +2091,14 @@ footer {
 
     .third-header3 a i {
         font-size: 18px;
+    }
+
+    #pace {
+        margin-right: 70px;
+    }
+
+    #peace {
+        display: none;
     }
 
     .account-dropdown {
@@ -2118,7 +2161,7 @@ footer {
         opacity: 1;
         pointer-events: auto;
         transition: none;
-        display: none; /* closed by default, JS toggles this */
+        display: none;
     }
 
     .category-item.open .category-panel,
@@ -2170,8 +2213,10 @@ footer {
         height: 220px;
     }
 
-    .carousel, .carousel-inner,
-    .carousel-item, .carousel-item img {
+    .carousel,
+    .carousel-inner,
+    .carousel-item,
+    .carousel-item img {
         width: 100% !important;
         max-width: 100% !important;
     }
@@ -2245,11 +2290,22 @@ footer {
     }
 
     .rate,
-    .rate1, .rate2, .rate3, .rate4, .rate5, .rate6,
-    .rate7, .rate8, .rate9, .rate10, .rate11, .rate12,
-    .rate13, .rate14 {
-        bottom: 200px;
-        left: 100px;
+    .rate1,
+    .rate2,
+    .rate3,
+    .rate4,
+    .rate5,
+    .rate6,
+    .rate7,
+    .rate8,
+    .rate9,
+    .rate10,
+    .rate11,
+    .rate12,
+    .rate13,
+    .rate14 {
+        bottom: 225px;
+        left: 95px;
     }
 
     .progress-bar {
@@ -2271,23 +2327,28 @@ footer {
         font-size: 13px;
     }
 
-    /* top sellers / hero-5 */
+
     .hero-5 {
         width: 92%;
     }
 
-    .rates {
-        bottom: 175px;
-        left: 105px;
+    .rated {
+        position: absolute;
+        top: 10px;
+        left: 95px;
+    }
+
+    .rated span {
+        background-color: #fdf3e9;
     }
 
     /* anniversary deals grid - already 4-up at 1024px rule, tighten further */
-    .deals [class^="hero-image"] > * {
+    .deals [class^="hero-image"]>* {
         flex: 0 0 calc(33.33% - 8px) !important;
         max-width: calc(33.33% - 8px) !important;
     }
 
-    .deals [class^="hero-image"] > *:nth-child(4) {
+    .deals [class^="hero-image"]>*:nth-child(4) {
         display: none !important;
     }
 
@@ -2350,7 +2411,8 @@ footer {
         gap: 15px;
     }
 
-    body, html {
+    body,
+    html {
         overflow-x: hidden;
         width: 100%;
     }
@@ -2360,8 +2422,27 @@ footer {
     }
 
     .hero_div {
-        gap: 20px; /* increase from 10px for more space between div_1 and hero-body2 */
+        gap: 20px;
+        /* increase from 10px for more space between div_1 and hero-body2 */
     }
+
+    .seller ul {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 20px;
+    white-space: nowrap;
+    scrollbar-width: none;
+    padding: 10px 15px;
+}
+
+.seller ul::-webkit-scrollbar {
+    display: none;
+}
+
+.seller li {
+    flex: 0 0 auto;
+}
 }
 
 
@@ -2450,11 +2531,22 @@ footer {
     }
 
     .rate,
-    .rate1, .rate2, .rate3, .rate4, .rate5, .rate6,
-    .rate7, .rate8, .rate9, .rate10, .rate11, .rate12,
-    .rate13, .rate14 {
-        bottom: 150px;
-        left: 75px;
+    .rate1,
+    .rate2,
+    .rate3,
+    .rate4,
+    .rate5,
+    .rate6,
+    .rate7,
+    .rate8,
+    .rate9,
+    .rate10,
+    .rate11,
+    .rate12,
+    .rate13,
+    .rate14 {
+        bottom: 205px;
+        left: 63px;
     }
 
     /* category grid: 2-up */
@@ -2468,18 +2560,24 @@ footer {
     }
 
     /* top sellers strip */
+    .rated {
+        position: absolute;
+        bottom: 185px;
+        left: 65px;
+    }
+
     .rates {
-        bottom: 135px;
-        left: 78px;
+        position: absolute;
+        left: 160px;
     }
 
     /* anniversary deals: 2-up on phones */
-    .deals [class^="hero-image"] > * {
+    .deals [class^="hero-image"]>* {
         flex: 0 0 calc(50% - 6px) !important;
         max-width: calc(50% - 6px) !important;
     }
 
-    .deals [class^="hero-image"] > *:nth-child(3) {
+    .deals [class^="hero-image"]>*:nth-child(3) {
         display: none !important;
     }
 
@@ -2541,5 +2639,34 @@ footer {
 
     .third-header2 {
         display: none;
+    }
+
+    .seller ul {
+    gap: 14px;
+}
+
+.seller a {
+    font-size: 12px;
+}
+}
+
+@media (max-width: 430px) {
+    .rates {
+        position: absolute;
+        left: 160px;
+    }
+}
+
+@media (max-width: 380px) {
+    .rates {
+        position: absolute;
+        left: 140px;
+    }
+}
+
+@media (max-width: 330px) {
+    .rates {
+        position: absolute;
+        left: 115px;
     }
 }
