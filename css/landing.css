@@ -118,7 +118,7 @@
 }
 
 .third-header2-con {
-    width: 550px;
+    width: 450px;
     text-align: left;
     align-items: start;
 }
@@ -159,7 +159,7 @@
 }
 
 .hero {
-    background: url("/multimedia/image/imgi_231_BG_TAKEOVER26.jpg") cover / contain;   
+    /* background: url("/multimedia/image/imgi_231_BG_TAKEOVER26.jpg"); */
     border: 3px solid black;
     width: 100%;
     margin-top: 10px;
