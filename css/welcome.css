@@ -4,37 +4,43 @@
     box-sizing: border-box;
     background-color: #FFFFFF;
 }
-.jumia{
+
+.jumia {
     display: flex;
-    align-items:center ;
+    align-items: center;
     flex-direction: column;
     line-height: 1;
     margin: 100px auto;
 }
-.jumia img{
+
+.jumia img {
     width: 60px;
 }
-.jumia h1{
-margin-top: 20px;
-font-family: Roboto, sans-serif;
-font-size: 22px;
-font-weight: 700;
-line-height: normal;
-color: rgb(0, 0, 0);
+
+.jumia h1 {
+    margin-top: 20px;
+    font-family: Roboto, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: normal;
+    color: rgb(0, 0, 0);
 }
-.jumia p{
-font-family: Roboto, sans-serif;
-font-size: 17px;
-font-weight: 500;
-line-height: 24px;
-color: rgb(74, 74, 74);
+
+.jumia p {
+    font-family: Roboto, sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 24px;
+    color: rgb(74, 74, 74);
 }
-.jumia input{
+
+.jumia input {
     margin-top: 20px;
     padding: 15px;
     width: 500px;
-} 
-.jumia button{
+}
+
+.jumia button {
     font-size: 16px;
     font-weight: 700;
     background-color: orange;
@@ -45,15 +51,16 @@ color: rgb(74, 74, 74);
     color: white;
 }
 
-.jumia-txt{
+.jumia-txt {
     margin-top: 30px;
 }
 
-.jumia-txt p{
+.jumia-txt p {
     position: relative;
     margin-top: 20px;
 }
-.jumia span{
+
+.jumia span {
     font-size: 16px;
     font-weight: 100;
     position: absolute;
@@ -61,26 +68,27 @@ color: rgb(74, 74, 74);
     left: 90px;
     top: -5px;
 }
-.jumia-img{
+
+.jumia-img {
     display: flex;
     gap: 20px;
 }
 
-.jumia-img img{
+.jumia-img img {
     width: 50px;
 }
 
-.terms{
+.terms {
     margin-top: 40px;
 }
 
-.terms h3{
+.terms h3 {
     text-align: center;
     font-size: 13px;
     font-weight: 500;
 }
 
-.terms ul{
+.terms ul {
     padding-left: 5px;
     margin: auto;
     display: flex;
@@ -88,22 +96,141 @@ color: rgb(74, 74, 74);
     list-style: none;
 }
 
-.terms a{
+.terms a {
     color: #F68B1E;
     font-size: 13px;
     font-weight: 500;
 }
 
-.foot{
+.foot {
     margin-top: 40px;
 }
 
-.foot h3{
+.foot h3 {
     font-size: 15px;
     font-weight: 500;
 }
 
-.foot img{
+.foot img {
     margin: 20px 150px;
     width: 100px;
+}
+
+/* ================================================================
+   TABLET / MOBILE  –  ≤ 600px
+   ================================================================ */
+@media (max-width: 600px) {
+
+    .jumia {
+        width: 90%;
+        margin: 60px auto;
+    }
+
+    .jumia img {
+        width: 50px;
+    }
+
+    .jumia h1 {
+        font-size: 19px;
+        text-align: center;
+    }
+
+    .jumia p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .jumia input {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .jumia button {
+        width: 100%;
+        padding: 16px;
+        margin-top: 30px;
+    }
+
+    .jumia-txt p {
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .jumia span {
+        font-size: 13px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        padding: 10px 8px;
+    }
+
+    .jumia-img img {
+        width: 42px;
+    }
+
+    .terms {
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .terms h3 {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    .terms ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .foot {
+        width: 100%;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .foot h3 {
+        font-size: 13px;
+    }
+
+    .foot img {
+        margin: 20px auto 0;
+        display: block;
+        width: 80px;
+    }
+}
+
+/* ================================================================
+   SMALL MOBILE  –  ≤ 380px
+   ================================================================ */
+@media (max-width: 380px) {
+
+    .jumia h1 {
+        font-size: 17px;
+    }
+
+    .jumia p {
+        font-size: 13px;
+    }
+
+    .jumia-txt p {
+        font-size: 12px;
+    }
+
+    .jumia span {
+        font-size: 12px;
+    }
+
+    .terms h3 {
+        font-size: 11px;
+    }
+
+    .terms a {
+        font-size: 12px;
+    }
+
+    .foot h3 {
+        font-size: 12px;
+    }
 }

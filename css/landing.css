@@ -2093,6 +2093,13 @@ footer {
         font-size: 18px;
     }
 
+    .third-header2,
+    .third-header2 * {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+
     #pace {
         margin-right: 70px;
     }
@@ -2664,9 +2671,11 @@ footer {
     }
 }
 
-@media (max-width: 330px) {
+
+@media (max-width: 340px) {
     .rates {
         position: absolute;
-        left: 115px;
+        left: 110px;
     }
 }
+
